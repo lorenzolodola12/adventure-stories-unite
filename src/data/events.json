@@ -1,0 +1,32 @@
+[
+  {
+    "title_en": "Inclusive Ski Day",
+    "title_it": "Giornata di sci inclusivo",
+    "date": "2025-12-15",
+    "location_en": "Sestriere, Italy",
+    "location_it": "Sestriere, Italia",
+    "summary_en": "Adaptive equipment tests and training with mentors.",
+    "summary_it": "Test di attrezzatura adattiva e training con mentori.",
+    "gallery": ["placeholder1.webp", "placeholder2.webp"]
+  },
+  {
+    "title_en": "Mountain Storytelling Workshop",
+    "title_it": "Workshop di Storytelling in Montagna",
+    "date": "2025-11-20",
+    "location_en": "Gran Paradiso, Italy",
+    "location_it": "Gran Paradiso, Italia",
+    "summary_en": "Learn documentary filmmaking techniques in alpine settings.",
+    "summary_it": "Impara tecniche di filmmaking documentaristico in ambiente alpino.",
+    "gallery": ["placeholder1.webp", "placeholder2.webp", "placeholder3.webp"]
+  },
+  {
+    "title_en": "Corporate Team Building Retreat",
+    "title_it": "Ritiro di Team Building Aziendale",
+    "date": "2025-10-05",
+    "location_en": "Dolomites, Italy",
+    "location_it": "Dolomiti, Italia",
+    "summary_en": "Custom inclusive outdoor experiences for companies.",
+    "summary_it": "Esperienze outdoor inclusive personalizzate per aziende.",
+    "gallery": ["placeholder1.webp"]
+  }
+]

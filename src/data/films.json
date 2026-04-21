@@ -1,0 +1,35 @@
+[
+  {
+    "title_en": "A Mountain for Everyone",
+    "title_it": "Una montagna per tutti",
+    "slug": "a-mountain-for-everyone",
+    "year": 2025,
+    "tags": ["documentary", "inclusion", "alps"],
+    "thumbnail": "placeholder.webp",
+    "video_url": "placeholder.mp4",
+    "description_en": "A documentary exploring accessibility and resilience in the Gran Paradiso.",
+    "description_it": "Un documentario su accessibilità e resilienza nel Gran Paradiso."
+  },
+  {
+    "title_en": "Wheels in the Wild",
+    "title_it": "Ruote nel Selvaggio",
+    "slug": "wheels-in-the-wild",
+    "year": 2024,
+    "tags": ["adventure", "adaptive-sports", "nature"],
+    "thumbnail": "placeholder.webp",
+    "video_url": "placeholder.mp4",
+    "description_en": "Following adaptive athletes as they conquer mountain trails.",
+    "description_it": "Seguendo atleti adattivi mentre conquistano sentieri di montagna."
+  },
+  {
+    "title_en": "Voices from the Summit",
+    "title_it": "Voci dalla Vetta",
+    "slug": "voices-from-summit",
+    "year": 2024,
+    "tags": ["documentary", "storytelling", "mountains"],
+    "thumbnail": "placeholder.webp",
+    "video_url": "placeholder.mp4",
+    "description_en": "Personal stories of transformation through outdoor challenges.",
+    "description_it": "Storie personali di trasformazione attraverso sfide all'aperto."
+  }
+]

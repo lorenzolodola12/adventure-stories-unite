@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Greens */
+    --green-1: 145 68% 24%;  /* #156624 */
+    --green-2: 92 57% 28%;   /* #3B701F */
+    --green-3: 70 67% 30%;   /* #638118 */
+    --green-4: 61 68% 31%;   /* #838519 */
+    --green-5: 50 98% 26%;   /* #816C03 */
+    
+    /* Neutrals */
+    --background: 0 0% 100%;
+    --sand: 48 50% 95%;      /* #F5F3E7 */
+    --foreground: 0 0% 7%;   /* #111 */
+    
+    /* Seasonal palettes - Spring/Summer (Mar-Aug) */
+    --primary: var(--green-3);
+    --primary-foreground: 0 0% 100%;
+    --accent: var(--green-1);
+    --accent-foreground: 0 0% 100%;
+    
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --secondary: 48 50% 95%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 48 50% 95%;
+    --muted-foreground: 0 0% 40%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: var(--green-3);
+    --radius: 0.375rem;
+    
+    /* Placeholder yellow */
+    --placeholder: 48 100% 50%; /* #FFD400 */
+  }
+
+  /* Autumn/Winter palette (Sep-Feb) */
+  [data-season="autumn-winter"] {
+    --primary: var(--green-5);
+    --accent: var(--green-4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Placeholder classes */
+  .ph-photo, .ph-video {
+    @apply bg-[hsl(var(--placeholder))] flex items-center justify-center font-semibold text-foreground;
+    aspect-ratio: 16/9;
+  }
+  
+  .ph-video::after {
+    content: ' (Video)';
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Cinematic animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  /* Staggered animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .hover-scale {
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ─── Micro-interactions ────────────────────────────────────────────────────
+   Defined outside @layer so these rules win over Tailwind utility classes
+   in the cascade without needing !important.
+   Easing: Emil Kowalski's strong ease-out — cubic-bezier(0.23, 1, 0.32, 1)
+   Timing: asymmetric enter (200ms) / leave (150ms) per design spec.
+─────────────────────────────────────────────────────────────────────────── */
+
+/* Cards — enter 200ms, leave 150ms */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -8px hsl(var(--primary) / 0.25);
+    transition-duration: 200ms;
+  }
+}
+
+/* Images — scale(1.03), 400ms ease-out on container group hover */
+.img-scale {
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .img-scale {
+    transform: scale(1.03);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* Buttons — translateY(-2px) + bg shift on hover, scale(0.97) on press */
+.micro-btn {
+  transition:
+    transform 150ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 150ms cubic-bezier(0.23, 1, 0.32, 1),
+    color 150ms cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 150ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .micro-btn:hover {
+    transform: translateY(-2px);
+    transition-duration: 200ms;
+  }
+}
+
+.micro-btn:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
+}
+
+/* Nav links — underline draws left→right on hover, only on inactive items */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  right: 6px;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transition-duration: 200ms;
+  }
+}
+
+/* Marquee strip */
+.marquee-strip {
+  height: 52px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track span {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  padding-right: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Faded pillar numbers behind card titles */
+.pillar-number {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.75rem;
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+  color: currentColor;
+  z-index: 0;
+}
+
+/* Portrait images — scale(1.04) on hover, 400ms */
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .portrait-img {
+    transform: scale(1.04);
+    transition-duration: 400ms;
+  }
+}
+
+/* Accessibility — honour reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .micro-btn,
+  .hover-lift,
+  .img-scale,
+  .nav-link::after {
+    transition-duration: 0.01ms;
+  }
+
+  .micro-btn:hover,
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  .micro-btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Ken Burns background animation */
+.ken-burns-bg {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.08); }
+}
+
+/* Film gallery cards */
+.film-card {
+  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .film-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition-duration: 300ms;
+  }
+}
+
+/* Film text overlay — 70% opacity at rest, full on card hover */
+.film-overlay {
+  opacity: 0.7;
+  transition: opacity 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .film-overlay {
+    opacity: 1;
+  }
+}
+
+/* Community people cards */
+.community-card {
+  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.15);
+    transition-duration: 300ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns-bg {
+    animation: none;
+  }
+  .film-card,
+  .community-card {
+    transition-duration: 0.01ms;
+  }
+  .film-card:hover,
+  .community-card:hover {
+    transform: none;
+  }
+}

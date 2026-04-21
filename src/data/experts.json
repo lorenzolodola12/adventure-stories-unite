@@ -1,0 +1,14 @@
+{
+  "experts": [
+    {
+      "name": "Elena Riccaldone",
+      "role_en": "Paralympic Ski Coach",
+      "role_it": "Allenatrice Sci Paralimpico",
+      "team_en": "Team G-Grande",
+      "team_it": "Team G-Grande",
+      "description_en": "Paralympic ski coach for the GGrande team. She works directly with athletes, combining hands-on coaching expertise with her role as board member, contributing to both training and organizational development.",
+      "description_it": "Allenatrice di sci paralimpico del team GGrande. Lavora direttamente con gli atleti, combinando la sua esperienza pratica di coaching con il suo ruolo di consigliera, contribuendo sia all'allenamento che allo sviluppo organizzativo.",
+      "image": "elena-profile.jpg"
+    }
+  ]
+}

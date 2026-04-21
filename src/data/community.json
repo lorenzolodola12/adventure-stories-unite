@@ -1,0 +1,66 @@
+{
+  "adventurables": [
+    {
+      "name_en": "Lorenzo Lodola",
+      "name_it": "Lorenzo Lodola",
+      "excerpt_en": "After an accident in 2020, Lorenzo found new meaning in movement. Through sport and film, he shares how determination and humor can rebuild identity.",
+      "excerpt_it": "Dopo un incidente nel 2020, Lorenzo ha trovato un nuovo significato nel movimento. Attraverso sport e cinema, condivide come determinazione e umorismo possano ricostruire l'identità.",
+      "story_en": "Lorenzo Lodola's life changed dramatically in 2020 following a serious accident. What could have been the end became a new beginning. Through adaptive skiing and outdoor sports, Lorenzo discovered not just physical recovery, but a profound transformation of identity and purpose.\n\nHis journey is marked by determination, resilience, and an unexpected sense of humor about the challenges he faces. Through documentary filmmaking, Lorenzo shares his story to inspire others facing similar circumstances, proving that movement and sport can be powerful tools for rebuilding one's sense of self.\n\nToday, Lorenzo is an active member of the Adventurabile community, participating in adaptive sports programs and helping to shape initiatives that make outdoor activities accessible to everyone.",
+      "story_it": "La vita di Lorenzo Lodola è cambiata radicalmente nel 2020 a seguito di un grave incidente. Quello che avrebbe potuto essere la fine è diventato un nuovo inizio. Attraverso lo sci adattivo e gli sport outdoor, Lorenzo ha scoperto non solo il recupero fisico, ma una profonda trasformazione dell'identità e dello scopo.\n\nIl suo percorso è caratterizzato da determinazione, resilienza e un inaspettato senso dell'umorismo riguardo alle sfide che affronta. Attraverso il documentario cinematografico, Lorenzo condivide la sua storia per ispirare altri che affrontano circostanze simili, dimostrando che il movimento e lo sport possono essere potenti strumenti per ricostruire il proprio senso di sé.\n\nOggi Lorenzo è un membro attivo della comunità Adventurabile, partecipa a programmi di sport adattivi e aiuta a plasmare iniziative che rendono le attività outdoor accessibili a tutti.",
+      "category": "athlete",
+      "image": "lorenzo-profile.jpg"
+    },
+    {
+      "name_en": "Edoardo",
+      "name_it": "Edoardo",
+      "excerpt_en": "Living with a rare condition since birth, Edoardo turns each challenge into connection. His story focuses on the power of curiosity and friendship through sport.",
+      "excerpt_it": "Convivendo con una condizione rara dalla nascita, Edoardo trasforma ogni sfida in connessione. La sua storia si concentra sul potere della curiosità e dell'amicizia attraverso lo sport.",
+      "story_en": "Born with a rare condition, Edoardo has never let his circumstances define his limits. Instead, he approaches each day with infectious curiosity and openness to new experiences. Through adaptive sports, particularly skiing and mountain activities, he has built deep friendships and discovered capabilities he never imagined.\n\nEdoardo's story is about more than overcoming obstacles—it's about transforming them into opportunities for genuine human connection. His positive attitude and willingness to try new things inspire everyone around him, proving that sport is ultimately about people, not performance.\n\nAs a core member of Adventurabile, Edoardo participates in various adaptive programs and serves as a living reminder that adventure is for everyone, regardless of physical ability.",
+      "story_it": "Nato con una condizione rara, Edoardo non ha mai lasciato che le sue circostanze definissero i suoi limiti. Invece, affronta ogni giorno con una curiosità contagiosa e apertura a nuove esperienze. Attraverso gli sport adattivi, in particolare lo sci e le attività di montagna, ha costruito profonde amicizie e scoperto capacità che non avrebbe mai immaginato.\n\nLa storia di Edoardo non riguarda solo il superamento degli ostacoli, ma la loro trasformazione in opportunità per una genuina connessione umana. Il suo atteggiamento positivo e la volontà di provare cose nuove ispirano tutti intorno a lui, dimostrando che lo sport riguarda in definitiva le persone, non la performance.\n\nCome membro centrale di Adventurabile, Edoardo partecipa a vari programmi adattivi e serve come promemoria vivente che l'avventura è per tutti, indipendentemente dalla capacità fisica.",
+      "category": "athlete",
+      "image": "edoardo-profile.jpg"
+    },
+    {
+      "name_en": "Fabio",
+      "name_it": "Fabio",
+      "excerpt_en": "Partially visually impaired, Fabio's strength lies in precision and focus. He's part of a growing group of athletes exploring adaptive outdoor experiences.",
+      "excerpt_it": "Parzialmente ipovedente, la forza di Fabio risiede nella precisione e nella concentrazione. Fa parte di un gruppo crescente di atleti che esplorano esperienze outdoor adattive.",
+      "story_en": "Fabio's partial visual impairment has taught him to rely on other senses and develop extraordinary focus and precision. What others might see as a limitation, he has transformed into a unique strength. Through adaptive skiing and outdoor activities, Fabio has discovered new ways to experience the mountains and nature.\n\nHis journey into adaptive sports began with curiosity and has evolved into a passion for pushing boundaries and exploring new possibilities. Fabio's story highlights how adaptive equipment and thoughtful program design can open up experiences that were previously inaccessible.\n\nAs part of the Adventurabile community, Fabio is helping to pioneer new approaches to adaptive outdoor recreation, proving that with the right support and equipment, the mountains are truly for everyone.",
+      "story_it": "L'ipovisione parziale di Fabio gli ha insegnato a fare affidamento su altri sensi e a sviluppare una straordinaria concentrazione e precisione. Quello che altri potrebbero vedere come un limite, lui l'ha trasformato in una forza unica. Attraverso lo sci adattivo e le attività outdoor, Fabio ha scoperto nuovi modi di vivere le montagne e la natura.\n\nIl suo viaggio negli sport adattivi è iniziato con la curiosità e si è evoluto in una passione per spingere i confini ed esplorare nuove possibilità. La storia di Fabio evidenzia come l'attrezzatura adattiva e la progettazione attenta del programma possano aprire esperienze che prima erano inaccessibili.\n\nCome parte della comunità Adventurabile, Fabio sta contribuendo a pionierare nuovi approcci alla ricreazione outdoor adattiva, dimostrando che con il giusto supporto e attrezzatura, le montagne sono veramente per tutti.",
+      "category": "athlete",
+      "image": "fabio-profile.jpg"
+    }
+  ],
+  "team": [
+    {
+      "name_en": "Team Member",
+      "name_it": "Membro del Team",
+      "excerpt_en": "Coming soon - we're building our professional team.",
+      "excerpt_it": "Prossimamente - stiamo costruendo il nostro team professionale.",
+      "story_en": "We are currently assembling our team of professionals who will support our athletes and programs.",
+      "story_it": "Stiamo attualmente assemblando il nostro team di professionisti che supporteranno i nostri atleti e programmi.",
+      "category": "team",
+      "image": "nature-mountain-view.jpg"
+    },
+    {
+      "name_en": "Team Member",
+      "name_it": "Membro del Team",
+      "excerpt_en": "Coming soon - we're building our professional team.",
+      "excerpt_it": "Prossimamente - stiamo costruendo il nostro team professionale.",
+      "story_en": "We are currently assembling our team of professionals who will support our athletes and programs.",
+      "story_it": "Stiamo attualmente assemblando il nostro team di professionisti che supporteranno i nostri atleti e programmi.",
+      "category": "team",
+      "image": "nature-misty-forest.jpg"
+    },
+    {
+      "name_en": "Team Member",
+      "name_it": "Membro del Team",
+      "excerpt_en": "Coming soon - we're building our professional team.",
+      "excerpt_it": "Prossimamente - stiamo costruendo il nostro team professionale.",
+      "story_en": "We are currently assembling our team of professionals who will support our athletes and programs.",
+      "story_it": "Stiamo attualmente assemblando il nostro team di professionisti che supporteranno i nostri atleti e programmi.",
+      "category": "team",
+      "image": "nature-winter-forest.jpg"
+    }
+  ]
+}
