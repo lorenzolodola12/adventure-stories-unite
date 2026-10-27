@@ -1,379 +1,142 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    /* Brand Greens */
-    --green-1: 145 68% 24%;  /* #156624 */
-    --green-2: 92 57% 28%;   /* #3B701F */
-    --green-3: 70 67% 30%;   /* #638118 */
-    --green-4: 61 68% 31%;   /* #838519 */
-    --green-5: 50 98% 26%;   /* #816C03 */
-    
-    /* Neutrals */
-    --background: 0 0% 100%;
-    --sand: 48 50% 95%;      /* #F5F3E7 */
-    --foreground: 0 0% 7%;   /* #111 */
-    
-    /* Seasonal palettes - Spring/Summer (Mar-Aug) */
-    --primary: var(--green-3);
-    --primary-foreground: 0 0% 100%;
-    --accent: var(--green-1);
-    --accent-foreground: 0 0% 100%;
-    
-    /* UI Elements */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
-    --secondary: 48 50% 95%;
-    --secondary-foreground: 0 0% 7%;
-    --muted: 48 50% 95%;
-    --muted-foreground: 0 0% 40%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: var(--green-3);
-    --radius: 0.375rem;
-    
-    /* Placeholder yellow */
-    --placeholder: 48 100% 50%; /* #FFD400 */
-  }
-
-  /* Autumn/Winter palette (Sep-Feb) */
-  [data-season="autumn-winter"] {
-    --primary: var(--green-5);
-    --accent: var(--green-4);
-  }
+@theme {
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-display: 'Anton', 'Impact', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html, body {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-  }
-  
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Placeholder classes */
-  .ph-photo, .ph-video {
-    @apply bg-[hsl(var(--placeholder))] flex items-center justify-center font-semibold text-foreground;
-    aspect-ratio: 16/9;
-  }
-  
-  .ph-video::after {
-    content: ' (Video)';
-  }
-  
-  /* Smooth transitions */
-  .transition-smooth {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* Cinematic animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-  
-  /* Staggered animation delays */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-  
-  /* Hover effects */
-  .hover-lift {
-    transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .hover-scale {
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
+/* Palette dalle foto: notte nel bosco, neve, oro dei larici in autunno (nature-larches) */
+:root, .dark {
+  --night: #0e100c; --night-2: #181b15; --snow: #ecebe3; --snow-2: #dedcd1; --accent: #cf951f;
+  --bg: var(--night); --bg-2: var(--night-2); --fg: var(--snow);
+  --muted: rgba(236, 235, 227, .62); --line: rgba(236, 235, 227, .14); --line-strong: rgba(236, 235, 227, .32);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --gutter: clamp(20px, 4vw, 56px);
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
+.light {
+  --bg: var(--snow); --bg-2: var(--snow-2); --fg: var(--night);
+  --muted: #56594e; --line: rgba(14, 16, 12, .14); --line-strong: rgba(14, 16, 12, .34);
+  --accent: #8a5e0a; /* più scuro sul chiaro, per il contrasto */
 }
+.dark, .light { background: var(--bg); color: var(--fg); }
 
-/* ─── Micro-interactions ────────────────────────────────────────────────────
-   Defined outside @layer so these rules win over Tailwind utility classes
-   in the cascade without needing !important.
-   Easing: Emil Kowalski's strong ease-out — cubic-bezier(0.23, 1, 0.32, 1)
-   Timing: asymmetric enter (200ms) / leave (150ms) per design spec.
-─────────────────────────────────────────────────────────────────────────── */
-
-/* Cards — enter 200ms, leave 150ms */
-@media (hover: hover) and (pointer: fine) {
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px -8px hsl(var(--primary) / 0.25);
-    transition-duration: 200ms;
-  }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
-
-/* Images — scale(1.03), 400ms ease-out on container group hover */
-.img-scale {
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+/* grana da pellicola */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+::selection { background: var(--accent); color: var(--night); }
 
-@media (hover: hover) and (pointer: fine) {
-  .group:hover .img-scale {
-    transform: scale(1.03);
-  }
+/* ── Layout ── */
+.wrap { width: 100%; max-width: 1480px; margin-left: auto; margin-right: auto; padding-left: var(--gutter); padding-right: var(--gutter); }
 
-  .hover-scale:hover {
-    transform: scale(1.03);
-  }
+/* ── Type: condensato maiuscolo + corsivo serif dentro la stessa frase ── */
+.display, .h1, .h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: -.005em; }
+.display { line-height: .86; font-size: clamp(3.6rem, 12.5vw, 14rem); }
+.h1 { line-height: .88; font-size: clamp(3rem, 8.6vw, 9.5rem); }
+.h2 { line-height: .92; font-size: clamp(2.2rem, 4.8vw, 5rem); }
+.h3 { font-family: var(--font-serif); font-weight: 400; line-height: 1.04; letter-spacing: -.01em; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+.ser { font-family: var(--font-serif); font-style: italic; text-transform: none; letter-spacing: -.02em; font-size: 1.06em; line-height: .9; }
+.lead { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.16; letter-spacing: -.01em; }
+.label { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; }
+.muted { color: var(--muted); }
+.num { font-feature-settings: "tnum" 1; }
+em, .it { font-style: italic; }
+
+/* ── Buttons & links ── */
+.btn {
+  display: inline-flex; align-items: center; gap: .75rem; height: 52px; padding: 0 1.6rem; border-radius: 999px;
+  font-size: 14px; font-weight: 500; letter-spacing: .02em; transition: background .35s var(--ease-out), color .35s var(--ease-out), transform .35s var(--ease-out);
 }
+.btn:active { transform: scale(.97); }
+.btn-ink { background: var(--fg); color: var(--bg); }
+.btn-ink:hover { background: var(--accent); color: var(--night); }
+.btn-paper { background: var(--snow); color: var(--night); }
+.btn-paper:hover { background: var(--accent); color: var(--night); }
+.btn-accent { background: var(--accent); color: var(--night); }
+.btn-accent:hover { background: var(--snow); }
+.btn-line { border: 1px solid currentColor; }
+.btn-line:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.on-photo .btn-line:hover { background: var(--snow); color: var(--night); border-color: var(--snow); }
+.ulink { background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: 2px; transition: background-size .5s var(--ease-out); }
+.ulink:hover { background-size: 0 1px; background-position: 100% 100%; }
+.arrow { transition: transform .45s var(--ease-out); }
+a:hover .arrow, button:hover .arrow { transform: translateX(5px); }
 
-/* Buttons — translateY(-2px) + bg shift on hover, scale(0.97) on press */
-.micro-btn {
-  transition:
-    transform 150ms cubic-bezier(0.23, 1, 0.32, 1),
-    background-color 150ms cubic-bezier(0.23, 1, 0.32, 1),
-    color 150ms cubic-bezier(0.23, 1, 0.32, 1),
-    box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1),
-    border-color 150ms cubic-bezier(0.23, 1, 0.32, 1),
-    opacity 150ms cubic-bezier(0.23, 1, 0.32, 1);
-}
+/* ── Motion: reveal ── */
+.rv { opacity: 0; transform: translateY(32px); transition: opacity 1.1s var(--ease-out), transform 1.1s var(--ease-out); transition-delay: calc(var(--d, 0) * 90ms); }
+.rv.in { opacity: 1; transform: none; }
 
-@media (hover: hover) and (pointer: fine) {
-  .micro-btn:hover {
-    transform: translateY(-2px);
-    transition-duration: 200ms;
-  }
-}
+/* parole che salgono da una maschera */
+.words .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .08em .1em 0; margin: 0 -.08em -.1em 0; }
+/* il corsivo sporge ai lati: più margine alla maschera, altrimenti le lettere vengono tagliate */
+.words.italic .w, .words .w.ser-w { padding: 0 .22em .12em .12em; margin: 0 -.22em -.12em -.12em; }
+.words .w > span { display: inline-block; transform: translateY(105%); transition: transform 1.15s var(--ease-out); transition-delay: calc(var(--i) * 55ms + var(--d, 0) * 90ms); }
+.words.in .w > span { transform: none; }
 
-.micro-btn:active {
-  transform: scale(0.97);
-  transition-duration: 100ms;
-}
+/* foto che si scopre dal basso, con leggero zoom-out */
+/* la maschera sta sul figlio: l'IntersectionObserver ignorerebbe un elemento con clip-path chiuso */
+.wipe { overflow: hidden; }
+.wipe > picture { display: block; clip-path: inset(100% 0 0 0); transition: clip-path 1.4s var(--ease-out); transition-delay: calc(var(--d, 0) * 90ms); }
+.wipe img { transform: scale(1.18); transition: transform 1.8s var(--ease-out); transition-delay: calc(var(--d, 0) * 90ms); }
+.wipe.in > picture { clip-path: inset(0 0 0 0); }
+.wipe.in img { transform: scale(1); }
 
-/* Nav links — underline draws left→right on hover, only on inactive items */
-.nav-link {
-  position: relative;
-}
+/* linea che si disegna */
+.rule { height: 1px; background: currentColor; opacity: .2; transform: scaleX(0); transform-origin: left; transition: transform 1.4s var(--ease-out); }
+.rule.in { transform: scaleX(1); }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 6px;
-  right: 6px;
-  height: 1.5px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
-}
+/* marquee */
+.marquee { display: flex; width: max-content; animation: marquee var(--speed, 40s) linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
 
-@media (hover: hover) and (pointer: fine) {
-  .nav-link:hover::after {
-    transform: scaleX(1);
-    transition-duration: 200ms;
-  }
-}
+/* ingresso pagina */
+.page-in { animation: pageIn .9s var(--ease-out) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-/* Marquee strip */
-.marquee-strip {
-  height: 52px;
-  background: #1a1a1a;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.marquee-track {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: marquee 28s linear infinite;
-}
-
-.marquee-track span {
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  font-size: 0.8rem;
-  padding-right: 0;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* Faded pillar numbers behind card titles */
-.pillar-number {
-  position: absolute;
-  top: 0.25rem;
-  left: 0.75rem;
-  font-size: 8rem;
-  font-weight: 900;
-  line-height: 1;
-  opacity: 0.06;
-  pointer-events: none;
-  user-select: none;
-  color: currentColor;
-  z-index: 0;
-}
-
-/* Portrait images — scale(1.04) on hover, 400ms */
-@media (hover: hover) and (pointer: fine) {
-  .group:hover .portrait-img {
-    transform: scale(1.04);
-    transition-duration: 400ms;
-  }
-}
-
-/* Accessibility — honour reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-  .micro-btn,
-  .hover-lift,
-  .img-scale,
-  .nav-link::after {
-    transition-duration: 0.01ms;
-  }
-
-  .micro-btn:hover,
-  .hover-lift:hover {
-    transform: none;
-  }
-
-  .micro-btn:active {
-    transform: scale(0.98);
-  }
-}
-
-/* Ken Burns background animation */
-.ken-burns-bg {
-  animation: kenBurns 20s ease-in-out infinite alternate;
-}
-
-@keyframes kenBurns {
-  from { transform: scale(1.0); }
-  to   { transform: scale(1.08); }
-}
-
-/* Film gallery cards */
-.film-card {
-  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .film-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    transition-duration: 300ms;
-  }
-}
-
-/* Film text overlay — 70% opacity at rest, full on card hover */
-.film-overlay {
-  opacity: 0.7;
-  transition: opacity 300ms ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .group:hover .film-overlay {
-    opacity: 1;
-  }
-}
-
-/* Community people cards */
-.community-card {
-  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .community-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.15);
-    transition-duration: 300ms;
-  }
-}
+/* cursore personalizzato (solo mouse) */
+.cursor { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; mix-blend-mode: difference; }
+.cursor-dot { width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; transition: width .45s var(--ease-out), height .45s var(--ease-out), margin .45s var(--ease-out); display: flex; align-items: center; justify-content: center; }
+.cursor-dot span { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #000; opacity: 0; transition: opacity .3s; }
+.cursor.big .cursor-dot { width: 84px; height: 84px; margin: -42px 0 0 -42px; }
+.cursor.big .cursor-dot span { opacity: 1; }
+@media (pointer: coarse) { .cursor { display: none; } }
+[data-hide-cursor] .cursor { opacity: 0; transition: opacity .6s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .ken-burns-bg {
-    animation: none;
-  }
-  .film-card,
-  .community-card {
-    transition-duration: 0.01ms;
-  }
-  .film-card:hover,
-  .community-card:hover {
-    transform: none;
-  }
+  .rv, .words .w > span, .wipe > picture, .wipe img, .rule { transition: none !important; opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  .marquee { animation: none; }
+  .page-in { animation: none; }
 }
+
+/* crocini di taglio, come su un provino a contatto */
+.marks { position: absolute; inset: -9px; pointer-events: none; --c: var(--line-strong);
+  background:
+    linear-gradient(var(--c), var(--c)) left top / 14px 1px no-repeat, linear-gradient(var(--c), var(--c)) left top / 1px 14px no-repeat,
+    linear-gradient(var(--c), var(--c)) right top / 14px 1px no-repeat, linear-gradient(var(--c), var(--c)) right top / 1px 14px no-repeat,
+    linear-gradient(var(--c), var(--c)) left bottom / 14px 1px no-repeat, linear-gradient(var(--c), var(--c)) left bottom / 1px 14px no-repeat,
+    linear-gradient(var(--c), var(--c)) right bottom / 14px 1px no-repeat, linear-gradient(var(--c), var(--c)) right bottom / 1px 14px no-repeat; }
+.frame-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--muted); display: flex; justify-content: space-between; margin-top: 10px; }
+
+/* galleria giustificata: righe più basse su telefono */
+.flex-wrap { --k: 1; }
+@media (max-width: 767px) { .flex-wrap { --k: .38; } }
