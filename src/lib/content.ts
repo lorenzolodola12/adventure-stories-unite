@@ -55,7 +55,7 @@ const it = {
       title: 'Oltre ogni *traguardo.*',
       items: [
         { key: 'ski', title: 'Sci alpino', body: 'La montagna, la velocità e la sfida agonistica. Viviamo lo sci come espressione di libertà, determinazione e passione.', to: '/lavoro/sport/sci', photo: 'ski-slalom' },
-        { key: 'canoe', title: 'Paracanoa', body: "Tra allenamento, disciplina e competizione, la canoa diventa anche un modo per vivere l'acqua e riscoprire il legame con la natura.", to: '/lavoro/sport/canoa', photo: 'canoe-scotland' },
+        { key: 'canoe', title: 'Paracanoa', body: "Tra allenamento, disciplina e competizione, la canoa diventa anche un modo per vivere l'acqua e riscoprire il legame con la natura.", to: '/lavoro/sport/canoa', photo: 'lorenzo-poznan-1' },
         { key: 'hiking', title: 'Esplorazione', body: "Escursioni e avventure all'aria aperta, tra carrozzine motorizzate ed handbike. Esploriamo luoghi selvaggi, imparando a conoscere, rispettare e proteggere la natura.", to: '/lavoro/sport/escursioni', photo: 'triride-ridge' },
       ],
     },
@@ -286,7 +286,7 @@ const en: Content = {
       title: 'Beyond every *finish line.*',
       items: [
         { key: 'ski', title: 'Alpine skiing', body: 'The mountains, speed and the competitive challenge. We live skiing as an expression of freedom, determination and passion.', to: '/lavoro/sport/sci', photo: 'ski-slalom' },
-        { key: 'canoe', title: 'Paracanoe', body: 'Through training, discipline and competition, the canoe also becomes a way to experience the water and rediscover our bond with nature.', to: '/lavoro/sport/canoa', photo: 'canoe-scotland' },
+        { key: 'canoe', title: 'Paracanoe', body: 'Through training, discipline and competition, the canoe also becomes a way to experience the water and rediscover our bond with nature.', to: '/lavoro/sport/canoa', photo: 'lorenzo-poznan-1' },
         { key: 'hiking', title: 'Exploration', body: 'Hikes and outdoor adventures with motorised wheelchairs and handbikes. We explore wild places, learning to know, respect and protect nature.', to: '/lavoro/sport/escursioni', photo: 'triride-ridge' },
       ],
     },
