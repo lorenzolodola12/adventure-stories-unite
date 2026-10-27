@@ -14,6 +14,8 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/company/adventurabile',
   lorenzo: 'https://www.linkedin.com/in/lorenzo-lodola-478087353/',
   dragos: 'https://www.linkedin.com/in/dragosciolan',
+  privacy: 'https://www.iubenda.com/privacy-policy/52701876',
+  cookies: 'https://www.iubenda.com/privacy-policy/52701876/cookie-policy',
 }
 
 const it = {

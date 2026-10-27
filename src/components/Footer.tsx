@@ -51,7 +51,11 @@ export default function Footer() {
 
         <div className="mt-20 pt-8 flex flex-col md:flex-row md:justify-between gap-3 text-[13px] muted" style={{ borderTop: '1px solid var(--line)' }}>
           <p>{t.footer.legal}</p>
-          <p>© {new Date().getFullYear()} Adventurabile APS</p>
+          <p className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href={LINKS.privacy} target="_blank" rel="noopener noreferrer" className="iubenda-nostyle hover:text-[var(--accent)] transition-colors">Privacy Policy</a>
+            <a href={LINKS.cookies} target="_blank" rel="noopener noreferrer" className="iubenda-nostyle hover:text-[var(--accent)] transition-colors">Cookie Policy</a>
+            <span>© {new Date().getFullYear()} Adventurabile APS</span>
+          </p>
         </div>
       </div>
     </footer>
